@@ -1,0 +1,28 @@
+* {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+header,
+footer {
+    background-color: #ACC196;
+    padding: 48px;
+}
+
+main {
+    background-color: #D7E1CB;
+    flex: 1;
+}
+
+
