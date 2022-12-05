@@ -42,9 +42,16 @@ main {
 }
 
 .sidebar {
-    padding: 20%;
+    padding: 6%;
+    text-transform: capitalize;
     background-color: #FFFFFF;
 }
+
+.sidebar p {
+    margin: 2%;
+    text-align: start;
+}
+
 .logo {
     width: 200px;
     height: auto;
@@ -54,6 +61,7 @@ main {
 }
 
 h1 {
-   text-align: center;
+    text-align: center;
 }
-
+    
+    
