@@ -1,6 +1,18 @@
+:root {
+    --font-heading: futura;
+    --font-main: caslon;
+    --indent-base: 16px;
+    --accent-color: #69433A; 
+    --main-color: #ACC196;
+    --light-color: #D7E1CB;
+    --dark-color: #311d16;
+  }
+
 * {
     text-align: center;
     box-sizing: border-box;
+    font-family: var(--font-main);
+    color: var(--dark-color);
 }
 
 html{
@@ -16,12 +28,13 @@ body {
 
 header,
 footer {
-    background-color: #ACC196;
+    background-color: var(--main-color);
     padding: 48px;
+    font-family: var(--font-heading);
 }
 
 main {
-    background-color: #D7E1CB;
+    background-color: var(--light-color);
     flex: 1;
 }
 
