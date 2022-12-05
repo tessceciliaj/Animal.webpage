@@ -69,4 +69,20 @@ main {
 h1 {
    text-align: center;
 }
+@media screen and (max-width: 660px) {
+    header {
+        padding: 16px;
+    }
 
+    .logo {
+        left: 0;
+        padding: 12px;
+        position: relative;
+        top: 0;
+        width: 200px;    
+    }
+
+    h1 {
+        margin: 0;
+    }
+}
