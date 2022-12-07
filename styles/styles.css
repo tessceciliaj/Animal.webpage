@@ -65,9 +65,18 @@ main {
     background-color: #FFFFFF;
 }
 
-.sidebar p {
+.sidebar p,
+.sidebar div {
     margin: 2%;
     text-align: start;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar .active {
+    text-decoration: underline;
 }
 
 footer p {
