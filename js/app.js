@@ -71,14 +71,17 @@ function addAnimalB(targetElement, source) {
 
 animalArray.forEach(function(animal) {
     createPara(animal.name);
-    /*
+
+});
+
+// Therese experiment with click-active
+
+document.querySelector(".animalTab").forEach(function (item) {
+    item.addEventListener("click", setActive);
+        /*
     animal.addEventListener("mouseenter", displayAnimal);
     animal.addEventListener("mouseleave", hideAnimal);
     */
-});
-
-document.querySelector(".animalTab").forEach(function (item) {
-    item.addEventListener("click", setActive)
 });
 
 function setActive() {
