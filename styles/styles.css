@@ -66,6 +66,16 @@ footer a {
     padding: 10px;
 }
 
+footer .fa-brands,
+footer .fa-solid {
+    transition: 0.5s;
+} 
+
+footer .fa-brands:hover,
+footer .fa-solid:hover {
+    scale: 1.3;
+}
+
 .logo {
     width: 200px;
     height: auto;
