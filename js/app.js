@@ -52,7 +52,7 @@ let birdsDiv = document.querySelector(".birds");
 function createPara(animal) {
     let newPara = document.createElement("p");
     newPara.textContent = animal;
-    newPara.className = "animalTab";
+    newPara.classList.add("animalTab");
 
     document.querySelector(".sidebar").appendChild(newPara);
 }
@@ -75,6 +75,7 @@ animalArray.forEach(function(animal) {
 });
 
 // Therese experiment with click-active
+let divs = document.getElementsByClassName("container")
 
 document.querySelector(".animalTab").forEach(function (item) {
     item.addEventListener("click", setActive);
@@ -85,32 +86,19 @@ document.querySelector(".animalTab").forEach(function (item) {
 });
 
 function setActive() {
-    animalArray.forEach(function (item) {
-        item.classList.remove("active");
+    divs.forEach(function (item) {
+        item.classList.remove("show");
     })
-    this.classList.add("active");
+    this.classList.add("show");
 };
 
 /*
 
 function displayAnimal() {
-    let animalName = this.classList[0];
-    this.classList.add("active");
-
-    animalArray.forEach(function (item) {
-        if (item.classList.contains(animalName)) {
-            item.classList.add("show");
-            return;
-        } else {
-            item.classList.remove("show");
-        }
-    });
+    this.classList.add("show");
 }
 
 function hideAnimal() {
-    this.classList.remove("active");
-    animalArray.forEach(function (item) {
-        item.classList.remove("show");
-    });
+    this.classList.remove("show");
 }
 */
