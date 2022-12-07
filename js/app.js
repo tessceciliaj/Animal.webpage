@@ -38,7 +38,7 @@ let cassowary = new Animal(
     "Queensland"
 );
 
-let animalNameArray = [echidna, lizard, cassowary];
+let animalArray = [echidna, lizard, cassowary];
 
 /*
 let birdsArray = [cassowary];
@@ -48,16 +48,16 @@ let birdsDiv = document.querySelector(".birds");
 */
 
 
-addAnimal(".sidebar", animalNameArray);
 
-function createPara(animal, targetDiv) {
+function createPara(animal) {
     let newPara = document.createElement("p");
     newPara.textContent = animal;
-    return newPara;
-    //document.querySelector(".sidebar").appendChild(newPara);
+
+    document.querySelector(".sidebar").appendChild(newPara);
 }
 
-function addAnimal(targetElement, source) {
+/*
+function addAnimalB(targetElement, source) {
     if(Array.isArray(source)) {
         source.forEach(function(element) {
             targetElement.appendChild(createPara(element));
@@ -66,4 +66,9 @@ function addAnimal(targetElement, source) {
         console.log("the target element is not an array")
     }
 }
+*/
 
+
+animalArray.forEach(function(animal) {
+    createPara(animal.name);
+});
