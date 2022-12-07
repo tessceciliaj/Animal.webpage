@@ -15,6 +15,8 @@
     color: var(--dark-color);
 }
 
+
+
 html{
     height: 100vh;
 }
@@ -31,7 +33,25 @@ footer {
     background-color: var(--main-color);
     padding: 48px;
     font-family: var(--font-heading);
+    position: relative;
+    width: 100%;
 }
+
+.nav-links {
+    padding: 1%;
+    background-color: var(--main-color);
+    border-bottom: 1px solid var(--dark-color);
+    border-top: 1px solid var(--dark-color);
+  }
+
+  nav a {
+    text-decoration: none;
+    padding: 5%;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
 
 main {
     background-color: var(--light-color);
@@ -46,16 +66,31 @@ footer a {
     padding: 10px;
 }
 
+.logo {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    left: 48px;
+    top: 24px
+}
 
+h1 {
+   text-align: center;
+}
+@media screen and (max-width: 660px) {
+    header {
+        padding: 16px;
+    }
 
+    .logo {
+        left: 0;
+        padding: 12px;
+        position: relative;
+        top: 0;
+        width: 200px;    
+    }
 
-
-
- 
-
-
-
-
-
-
-
+    h1 {
+        margin: 0;
+    }
+}
