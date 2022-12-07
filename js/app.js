@@ -56,19 +56,21 @@ function createPara(animal) {
     document.querySelector(".sidebar").appendChild(newPara);
 }
 
-/*
-function addAnimalB(targetElement, source) {
-    if(Array.isArray(source)) {
-        source.forEach(function(element) {
-            targetElement.appendChild(createPara(element));
+function addAnimal() {
+    if(Array.isArray(animalArray)) {
+        animalArray.forEach(function(animal) {
+            createPara(animal.name);
         });
     } else {
         console.log("the target element is not an array")
     }
 }
-*/
 
+addAnimal(animalArray.name);
 
+/*
+!!instead of the addAnimal function
 animalArray.forEach(function(animal) {
     createPara(animal.name);
 });
+*/
