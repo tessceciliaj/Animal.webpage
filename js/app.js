@@ -1,3 +1,10 @@
+/*
+smallImg
+largeImg
+height??
+*/
+
+
 function Animal(name, lifespan, group, food, description, length, weight, found) {
     this.name = name;
     this.lifespan = lifespan;
@@ -52,6 +59,7 @@ let birdsDiv = document.querySelector(".birds");
 function createPara(animal) {
     let newPara = document.createElement("p");
     newPara.textContent = animal;
+    newPara.classList.add("animalTab");
 
     document.querySelector(".sidebar").appendChild(newPara);
 }
@@ -73,4 +81,21 @@ addAnimal(animalArray.name);
 animalArray.forEach(function(animal) {
     createPara(animal.name);
 });
+*/
+
+//create divs for animals 
+function createTinyDivs() {
+    let createDiv = document.createElement("div");
+    let animalName = document.createElement("p"),
+
+}
+
+/*
+home page - short summary
+
+small image of the animal
+animal name
+info, ex first 200 characters
+what the animal eats
+group 
 */
