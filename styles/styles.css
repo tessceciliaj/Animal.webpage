@@ -59,6 +59,15 @@ main {
 .container {
     flex: 1 0 31%;
     margin: 10%;
+    display: none;
+}
+
+.active {
+    color: #311d16;
+}
+
+.show {
+    display: block;
 }
 
 .container img {
