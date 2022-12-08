@@ -6,26 +6,26 @@ function Animal(name, lifespan, group, food, description, length, weight, found)
     this.description = description;
     this.length = length;
     this.weight = weight;
-    this.found = found; 
+    this.found = found;
 }
 
 let echidna = new Animal(
-    "Echidna", 
-    "50 years", 
-    "Mammals", 
-    "Insects such as ants and termites, beetle larvae and worms", 
-    "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.", 
-    "76 cm", 
-    "10 kg", 
+    "Echidna",
+    "50 years",
+    "Mammals",
+    "Insects such as ants and termites, beetle larvae and worms",
+    "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
+    "76 cm",
+    "10 kg",
     "Throughout Australia");
 let lizard = new Animal(
-    "Frill-Necked Lizard", 
-    "20 years", 
-    "Reptile", 
-    "Small insects and spiders", 
-    "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses. If an attacker is unintimidated by these antics, the lizard simply turns tail, mouth and frill open, and bolts, legs splaying left and right. It continues its deliberate run without stopping or looking back until it reaches the safety of a tree.", 
-    "90 cm", 
-    "1 kg", 
+    "Frill-Necked Lizard",
+    "20 years",
+    "Reptile",
+    "Small insects and spiders",
+    "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses. If an attacker is unintimidated by these antics, the lizard simply turns tail, mouth and frill open, and bolts, legs splaying left and right. It continues its deliberate run without stopping or looking back until it reaches the safety of a tree.",
+    "90 cm",
+    "1 kg",
     "Northern Australia");
 let cassowary = new Animal(
     "Cassowary",
@@ -40,65 +40,49 @@ let cassowary = new Animal(
 
 let animalArray = [echidna, lizard, cassowary];
 
-/*
-let birdsArray = [cassowary];
-let mammalsArray = [echidna];
-let reptilesArray = [lizard];
-let birdsDiv = document.querySelector(".birds");
-*/
 
-
+//siedebar para
 
 function createPara(animal) {
+
     let newPara = document.createElement("p");
     newPara.textContent = animal;
     newPara.classList.add("animalTab");
-
     document.querySelector(".sidebar").appendChild(newPara);
 }
 
-/*
-function addAnimalB(targetElement, source) {
-    if(Array.isArray(source)) {
-        source.forEach(function(element) {
-            targetElement.appendChild(createPara(element));
-        });
-    } else {
-        console.log("the target element is not an array")
-    }
-}
-*/
-
-animalArray.forEach(function(animal) {
+animalArray.forEach(function (animal) {
     createPara(animal.name);
 
 });
 
-// Therese experiment with click-active
-let divs = document.getElementsByClassName("container")
+// show/hide
 
-document.querySelector(".animalTab").forEach(function (item) {
-    item.addEventListener("click", setActive);
-        /*
-    animal.addEventListener("mouseenter", displayAnimal);
-    animal.addEventListener("mouseleave", hideAnimal);
-    */
+let animals = Array.from(document.getElementsByClassName("animalTab"));
+
+let animalDivs = Array.from(document.getElementsByClassName("container"));
+
+animals.forEach(function (tab) {
+    tab.addEventListener("mouseenter", displayAnimal);
+    tab.addEventListener("mouseleave", hideAnimal);
+    tab.addEventListener("click", showAnimal);
 });
 
-function setActive() {
-    divs.forEach(function (item) {
-        item.classList.remove("show");
-    })
-    this.classList.add("show");
+function displayAnimal() {
+    this.classList.add("active");
+    
 };
 
-/*
-
-function displayAnimal() {
-    this.classList.add("show");
-}
-
 function hideAnimal() {
-    this.classList.remove("show");
-}
-*/
+    this.classList.remove("active");
+};
+
+function showAnimal() {
+    animalDivs.forEach(function (item) {
+        let animalName = item.classList[1];
+        console.log(animalName)
+        if (item.classList.contains(animalName)) {
+            item.classList.add("show");
+        }
+    })
+};
