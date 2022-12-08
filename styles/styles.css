@@ -52,13 +52,11 @@ footer {
 
 main {
     background-color: var(--light-color);
-    flex: 1;
     display: flex;
 }
 
 .container {
-    flex: 1 0 31%;
-    margin: 10%;
+  
     display: none;
 }
 
@@ -67,7 +65,9 @@ main {
 }
 
 .show {
-    display: block;
+    display: block;  
+    flex: 1 0 31%;
+    margin: auto;
 }
 
 .container img {

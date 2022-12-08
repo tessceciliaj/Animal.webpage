@@ -63,17 +63,17 @@ let animals = Array.from(document.getElementsByClassName("animalTab"));
 let animalDivs = Array.from(document.getElementsByClassName("container"));
 
 animals.forEach(function (tab) {
-    tab.addEventListener("mouseenter", displayAnimal);
-    tab.addEventListener("mouseleave", hideAnimal);
+    tab.addEventListener("mouseenter", activeAnimal);
+    tab.addEventListener("mouseleave", unactiveAnimal);
     tab.addEventListener("click", showAnimal);
 });
 
-function displayAnimal() {
+function activeAnimal() {
     this.classList.add("active");
     
 };
 
-function hideAnimal() {
+function unactiveAnimal() {
     this.classList.remove("active");
 };
 
